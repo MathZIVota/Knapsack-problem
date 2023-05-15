@@ -1,8 +1,9 @@
 #include<vector>
 #include<iostream>
-#include <bits/stdc++.h>
+#include <algorithm> //sort
 using namespace std;
 
+//Data entry (from the keyboard)
 void Input(vector<pair<pair<int, int>,int>> &B,int N){
     int i=0;
   for(auto &p:B){
@@ -10,27 +11,20 @@ void Input(vector<pair<pair<int, int>,int>> &B,int N){
     p.second = i;
     i++;
   }
-  
 }
+//Comparator for sorting
 bool cmp(pair<pair<int,int>,int> a, pair<pair<int,int>,int> b){
-  return ((a.first.first)/(a.first.second) < (b.first.first)/(b.first.second));
+  return (a.first.first/a.first.second < b.first.first/b.first.second);
 }
 
 int main()
 {
   int n, W;  cin >> n >> W;
   vector<pair<pair<int, int>,int>> Bag(n); //first - value, second - weight
-  cout << "Size Bag: " << Bag.size() << endl;
   Input(Bag, n);
   
   std::sort(Bag.begin(), Bag.end(),cmp);
   
-  cout << "n:" << n << endl;
-  cout << "W:" << W << endl;
-  cout << "-------\n";
-  for(auto p: Bag)  cout << p.second << ":"<< p.first.first << " " << p.first.second << endl;
-   cout << "-------\n";
-   
   int weight_tmp = W;
   int sum_value = 0;
   vector<int> flag(n);
@@ -43,9 +37,10 @@ int main()
       
     } 
   }
+  cout << sum_value << endl;
   for(auto x: flag) cout << x << " ";
   cout << endl;
-  cout << "------\nVALUE: " << sum_value << endl;
-  for(auto p: Bag)  cout << p.second << ":" << p.first.first << " " << p.first.second << endl;
+  
+ // for(auto p: Bag)  cout << p.second << ":" << p.first.first << " " << p.first.second << endl;
   return 0;
 }
