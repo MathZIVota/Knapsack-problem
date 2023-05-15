@@ -1,25 +1,3 @@
-/******************************************************************************
-
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-/*
-#include<iostream>
-#include<vector>
-using namespace std;
-
-int main()
-{
-    int N; cout << "N:"; cin >> N;
-    vector<pair<pair<int,int>,int>> vec(N);
-    int i=1;
-    for(auto &v: vec) {v.first.first = i*i; v.first.second = -i*i; v.second = i; i++;}
-    for(auto &v: vec) cout << v.second << ":" << v.first.first << " " << v.first.second << endl;
-    return 0;
-}
-*/
 #include<vector>
 #include<iostream>
 #include <bits/stdc++.h>
