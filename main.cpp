@@ -34,10 +34,9 @@ int main()
       sum_value += p.first.first; 
       weight_tmp -= p.first.second;
       flag[p.second] = 1;
-      
     } 
   }
-  cout << sum_value << endl;
+  cout << sum_value << " " << weight_tmp << endl;
   for(auto x: flag) cout << x << " ";
   cout << endl;
   
